@@ -1,0 +1,41 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.navbar {
+  height: 75px;
+  box-shadow: 0 5px 10px -10px rgba(0, 0, 0, 0.4);
+  background: white;
+}
+
+.container {
+  .list-group-item svg:first-child {
+    cursor: move;
+  }
+  .list-group-item svg {
+    cursor: pointer;
+  }
+  .more-info {
+    z-index: 2;
+    top: -245px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .more-info.active {
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
+  }
+  .card-text-more {
+    min-height: 150px;
+  }
+  .app-content-body {
+    margin-bottom: 0;
+    -webkit-box-flex: 1;
+    flex: 1;
+    padding: 0;
+    height: 100%;
+    position: static;
+    overflow: hidden;
+  }
+}
