@@ -11,6 +11,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import {ReactSortable} from "react-sortablejs";
 import TodoTasksMore from "./TodoTasksMore";
+import Modal from "react-bootstrap/Modal";
 
 const TodoTasks = () => {
 
@@ -23,8 +24,42 @@ const TodoTasks = () => {
     const [show, setShow] = useState(false);
     const [id, setId] = useState();
 
+    const [showModal, setShowModal] = useState(false);
+
+    const handleClose = () => setShowModal(false);
+    const handleShow = () => setShowModal(true);
+
     return (
         <Col md={8} className="mb-2">
+            <Modal show={showModal} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Add task</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="basic-addon3">
+                                Task title
+                            </InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl id="basic-url" aria-describedby="basic-addon3" />
+                    </InputGroup>
+                    <InputGroup>
+                        <InputGroup.Prepend>
+                            <InputGroup.Text>Description</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl as="textarea" aria-label="With textarea" />
+                    </InputGroup>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleClose}>
+                        Save Changes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <Card>
                 <Card.Body>
                     <ListGroup horizontal>
@@ -34,7 +69,7 @@ const TodoTasks = () => {
                             <Dropdown.Item as="button">Done</Dropdown.Item>
                             <Dropdown.Item as="button">Deleted</Dropdown.Item>
                         </DropdownButton>
-                        <Button variant="outline-primary" className="mr-1">Add</Button>
+                        <Button variant="outline-primary" className="mr-1" onClick={handleShow}>Add</Button>
                         <InputGroup>
                             <FormControl
                                 placeholder="Search task"

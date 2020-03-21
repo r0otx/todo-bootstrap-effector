@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "effector": "^20.13.0",
     "effector-react": "^20.6.3",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
