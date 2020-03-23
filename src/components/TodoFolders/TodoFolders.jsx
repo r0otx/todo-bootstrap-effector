@@ -5,14 +5,20 @@ import Button from "react-bootstrap/Button";
 import ListGroup from "react-bootstrap/ListGroup";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faFolder, faTrash} from "@fortawesome/free-solid-svg-icons";
-import {$input, delFolder, getFolders, onTextChanged, setFolder, somethingAdded} from "./model";
+import {
+    $input,
+    delFolder,
+    getFolders,
+    getTasks,
+    onTextChanged, selectedFolder,
+    setFolder,
+    somethingAdded
+} from "./model";
 import Modal from "react-bootstrap/Modal";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import {useStore} from "effector-react";
 import {$folders} from "../../effector/model";
-import Row from "react-bootstrap/Row";
-import Toast from "react-bootstrap/Toast";
 
 const TodoFolders = () => {
 
@@ -42,12 +48,12 @@ const TodoFolders = () => {
                 <Card.Body>
                     <Button variant="primary" size="xs" block onClick={handleShow}>Add Folder</Button>
                 </Card.Body>
-                <ListGroup variant="flush">
+                <ListGroup variant="flush" className="folders">
                     <ListGroup.Item action href="#link1">
                         <FontAwesomeIcon icon={faEnvelope} size="xs" className="mr-1"/>All</ListGroup.Item>
                     {folders.map(item => {
                         return (
-                            <ListGroup.Item action key={item.id} href={`#${item.id}`}>
+                            <ListGroup.Item action key={item.id} href={`#${item.id}`} onClick={() => {getTasks(item.id); selectedFolder(item.id)}}>
                                 <FontAwesomeIcon icon={faFolder} size="xs" className="mr-1"/>
                                 {item.title}
                                 <FontAwesomeIcon icon={faTrash} onClick={() => delFolder(item.id)} size="sm" className="float-right"/>

@@ -6,29 +6,43 @@
   background: white;
 }
 
+.content-wrapper {
+  -webkit-box-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: flex;
+}
+
 .container {
-  .list-group {
+  .folders {
     overflow: auto;
-    max-height: 250px;
   }
-  .list-group-item svg:first-child {
+  .tasks {
+    overflow: auto;
+  }
+/*  .list-group-item svg:first-child {
     cursor: move;
-  }
+  }*/
   .list-group-item svg {
     cursor: pointer;
   }
   .more-info {
     z-index: 2;
-    top: -245px;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: all 0.3s;
     transition: all 0.3s;
+    margin-bottom: 0;
+    position: absolute;
+    right: 0.9rem;
+    top: 0.5rem;
+    bottom: 0;
+    left: 0.9rem;
   }
   .more-info.active {
     z-index: 2;
     opacity: 1;
     visibility: visible;
+    top: 0;
   }
   .card-text-more {
     min-height: 150px;

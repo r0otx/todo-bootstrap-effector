@@ -9,24 +9,29 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
-import {ReactSortable} from "react-sortablejs";
 import TodoTasksMore from "./TodoTasksMore";
 import Modal from "react-bootstrap/Modal";
+import {$tasks} from "../../effector/model";
+import {useStore} from "effector-react";
+import {$input, delTask, onTextChanged, setTask} from "./model";
+import {$selectedFolder} from "../TodoFolders/model";
 
 const TodoTasks = () => {
 
-    const [state, setState] = useState([
-        {id: 1, name: "Buy new car Mercedes", description: "Lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum"},
-        {id: 2, name: "Search my first high paid job", description: "Lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum"},
-        {id: 3, name: "Send dick pic mail to my ex-wife", description: "Lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum lorem ipsum huipsum pidripsum"}
-        ]);
+    const tasks = useStore($tasks);
+    const input = useStore($input);
+    const selectedFolder = useStore($selectedFolder);
 
-    const [show, setShow] = useState(false);
-    const [id, setId] = useState();
+    const [active, setActive] = useState(false);
+    const [id, setId] = useState("");
 
     const [showModal, setShowModal] = useState(false);
 
     const handleClose = () => setShowModal(false);
+    const handleSave = () => {
+        setTask({id: selectedFolder, title: input});
+        setShowModal(false);
+    };
     const handleShow = () => setShowModal(true);
 
     return (
@@ -42,20 +47,20 @@ const TodoTasks = () => {
                                 Task title
                             </InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl id="basic-url" aria-describedby="basic-addon3" />
+                        <FormControl id="basic-url" aria-describedby="basic-addon3" value={input} onChange={onTextChanged}/>
                     </InputGroup>
                     <InputGroup>
                         <InputGroup.Prepend>
                             <InputGroup.Text>Description</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl as="textarea" aria-label="With textarea" />
+                        <FormControl as="textarea" aria-label="With textarea"/>
                     </InputGroup>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="primary" onClick={handleSave}>
                         Save Changes
                     </Button>
                 </Modal.Footer>
@@ -85,22 +90,25 @@ const TodoTasks = () => {
                 </Card.Body>
             </Card>
             <Card className="mt-3">
-                <ListGroup variant="flush">
-                    <ReactSortable list={state} setList={setState} animation={300} handle={"svg"}>
-                        {state.map(item => (
+                <ListGroup variant="flush" className="tasks">
+                        {tasks.map(item => (
                             <ListGroup.Item key={item.id}
                                             action
-                                            onClick={() => setId([item.id]) & setShow(true)}
-                                            variant="success">
+                                            onClick={() => {
+                                                setId(item.id);
+                                                setActive(true);
+                                            }}
+                                            variant={item.completed ? "success" : ""}>
                                 <FontAwesomeIcon icon={faBars} size="sm" className="mr-1"/>
-                                {item.name}
-                                <FontAwesomeIcon icon={faTrash} size="sm" className="float-right"/>
+                                {item.title}
+                                <Button className="float-right" variant="outline-danger" onClick={() => delTask({listId: item.todoListId, taskId: item.id})}>
+                                    <FontAwesomeIcon icon={faTrash} size="sm" />
+                                </Button>
                             </ListGroup.Item>
                         ))}
-                    </ReactSortable>
                 </ListGroup>
             </Card>
-            {show ? <TodoTasksMore setShow={setShow} state={state} id={id} /> : null}
+            <TodoTasksMore id={id} active={active} setActive={setActive}/>
         </Col>
     );
 };

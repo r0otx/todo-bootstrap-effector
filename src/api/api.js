@@ -11,16 +11,25 @@ const httpClient = axios.create({
 export const authAPI = {};
 
 export const todoAPI = {
-    getTodoList() {
+    getTodoFolders() {
         return httpClient.get(`todo-lists`);
     },
-    postTodoItem(title) {
+    postTodoFolder(title) {
         return httpClient.post(`todo-lists`, {title});
     },
-    deleteTodoItem(id) {
+    deleteTodoFolder(id) {
         return httpClient.delete(`todo-lists/${id}`);
     },
-    renameTodoItem(id, name) {
+    renameTodoFolder(id, name) {
         return httpClient.put(`todo-lists/${id}`, {title: name})
+    },
+    getTasks(tasklistid) {
+        return httpClient.get(`todo-lists/${tasklistid}/tasks`);
+    },
+    postTask(params) {
+        return httpClient.post(`todo-lists/${params.id}/tasks`, {title: params.title});
+    },
+    delTask(params) {
+        return httpClient.delete(`todo-lists/${params.listId}/tasks/${params.taskId}`)
     }
 };

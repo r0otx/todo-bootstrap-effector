@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11b75429-be6f-48b1-9385-e2e6943dbc32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/TodoFolders/model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TodoTasks/model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effector/model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TodoFolders/TodoFolders.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoFolders/TodoFolders.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodoFolders/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoFolders/model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TodoTasks/TodoTasks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoTasks/TodoTasks.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodoTasks/TodoTasksMore.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoTasks/TodoTasksMore.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodoTasks/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoTasks/model.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/TodoTasks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../todolist" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -56,6 +54,9 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Developers\react\todo-effector\src\effector" />
+    </key>
+    <key name="OPEN_URL_DIALOG">
+      <recent name="https://github.com/svettaEfimova/samuraiLesons.git" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Developers\react\todo-effector\src\components\TodoTasks" />
@@ -87,7 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584375998565</updated>
-      <workItem from="1584376000179" duration="75904000" />
+      <workItem from="1584376000179" duration="103940000" />
     </task>
     <task id="LOCAL-00001" summary="Add api&#10;Separation app.jsx for a few components">
       <created>1584482018456</created>
@@ -96,46 +97,69 @@
       <option name="project" value="LOCAL" />
       <updated>1584482018456</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add effector model to TodoFolders&#10;Add modal window to Add Folder and Add Task">
+      <created>1584777226708</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584777226708</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../samuraiLesons/node_modules/wait-for-expect/lib/toBeInRangeMatcher.d.js" />
+        <option value="$PROJECT_DIR$/../samuraiLesons/node_modules/wait-for-expect/lib/waitForExpect.spec.d.js" />
+        <option value="$PROJECT_DIR$/../samuraiLesons/node_modules/wait-for-expect/lib/index.d.js" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add api&#10;Separation app.jsx for a few components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add api&#10;Separation app.jsx for a few components" />
+    <MESSAGE value="Add effector model to TodoFolders&#10;Add modal window to Add Folder and Add Task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add effector model to TodoFolders&#10;Add modal window to Add Folder and Add Task" />
   </component>
   <component name="WindowStateProjectService">
     <state x="533" y="202" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584693087702">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="533" y="202" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1584693087702" />
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1584482017911">
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1584777226200">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584482017911" />
-    <state width="1515" height="190" key="GridCell.Tab.0.bottom" timestamp="1584428061498">
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584777226200" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1584889321763">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584428061498" />
-    <state width="1515" height="190" key="GridCell.Tab.0.center" timestamp="1584428061498">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584889321763" />
+    <state width="1515" height="190" key="GridCell.Tab.0.bottom" timestamp="1584889731619">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584428061498" />
-    <state width="1515" height="190" key="GridCell.Tab.0.left" timestamp="1584428061498">
+    <state width="1515" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584889731619" />
+    <state width="1515" height="190" key="GridCell.Tab.0.center" timestamp="1584889731619">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584428061498" />
-    <state width="1515" height="190" key="GridCell.Tab.0.right" timestamp="1584428061498">
+    <state width="1515" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584889731619" />
+    <state width="1515" height="190" key="GridCell.Tab.0.left" timestamp="1584889731619">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584428061498" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1584482030007">
+    <state width="1515" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584889731619" />
+    <state width="1515" height="190" key="GridCell.Tab.0.right" timestamp="1584889731619">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1584482030007" />
+    <state width="1515" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584889731619" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1584923642400">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1584923642400" />
+    <state x="510" y="38" key="refactoring.ChangeSignatureDialog" timestamp="1584875756653">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="510" y="38" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1584875756653" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1584772929674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

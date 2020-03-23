@@ -1,21 +1,26 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {faArrowLeft, faCheck, faPencilAlt, faTrash} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {useStore} from "effector-react";
+import {$tasks} from "../../effector/model";
 
 const TodoTasksMore = (props) => {
+
+    const tasks = useStore($tasks);
+
     return (
-        <Card className="more-info active">
+        <Card className={`more-info ${props.active ? "active" : ""}`}>
             <Card.Header>
-                <FontAwesomeIcon icon={faArrowLeft} size="sm"  className="mr-1" onClick={() => props.setShow(false)}/>{props.state[props.id - 1].name}
-                <Button className="float-right ml-1" size="sm" variant="outline-dark">Del</Button>
-                <Button className="float-right ml-1" size="sm" variant="outline-warning">Edit</Button>
-                <Button className="float-right" size="sm" variant="outline-success">Complete</Button>
+                <FontAwesomeIcon icon={faArrowLeft} size="sm"  className="mr-1" onClick={() => props.setActive(false)}/>{tasks.map(item => item.id === props.id && item.title)}
+                <Button className="float-right ml-1" size="sm" variant="outline-dark"><FontAwesomeIcon icon={faTrash} size="sm" /></Button>
+                <Button className="float-right ml-1" size="sm" variant="outline-warning"><FontAwesomeIcon icon={faPencilAlt} size="sm" /></Button>
+                <Button className="float-right" size="sm" variant="outline-success"><FontAwesomeIcon icon={faCheck} size="sm" /></Button>
             </Card.Header>
             <Card.Body>
                 <Card.Text className="card-text-more">
-                    {props.state[props.id - 1].description}
+                    {tasks.map(item => item.id === props.id && item.description)}
                 </Card.Text>
             </Card.Body>
         </Card>
