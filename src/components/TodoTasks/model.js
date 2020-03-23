@@ -1,14 +1,9 @@
-import {createEffect, createEvent, createStore} from "effector";
+import {createEffect} from "effector";
 import {todoAPI} from "../../api/api";
 import {$tasks} from "../../effector/model";
 
-//Input state title
-const textChanged = createEvent("Input Text");
-export const somethingAdded = createEvent();
-export const onTextChanged = textChanged.prepend((event) => event.currentTarget.value);
-export const $input = createStore("")
-    .on(textChanged, (state, title) => title)
-    .reset(somethingAdded);
+//Formik
+
 
 //Add new task
 export const setTask = createEffect("Add Task").use( async (params) => {

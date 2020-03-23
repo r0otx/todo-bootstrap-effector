@@ -20,7 +20,6 @@ import {useFormik} from "formik";
 const TodoTasks = () => {
 
     const tasks = useStore($tasks);
-    const selectedFolder = useStore($selectedFolder);
 
     const [active, setActive] = useState(false);
     const [id, setId] = useState("");
@@ -31,11 +30,24 @@ const TodoTasks = () => {
 
     const handleShow = () => setShowModal(true);
 
+    const selectedFolder = useStore($selectedFolder);
+
+    const validate = (values) => {
+        const errors = {};
+        if (!values.title) {
+            errors.title = 'Required';
+        } else if (values.title.length > 100) {
+            errors.title = 'Must be 100 characters or less';
+        }
+        return errors;
+    };
+
     const addTaskForm = useFormik({
         initialValues: {
-            title: '',
-            description: '',
+            title: "",
+            description: "",
         },
+        validate,
         onSubmit: (values) => {
             setTask({id: selectedFolder, title: values.title, description: values.description});
         },
@@ -58,9 +70,15 @@ const TodoTasks = () => {
                         <FormControl id="title"
                                      type="text"
                                      name="title"
+                                     onBlur={addTaskForm.setTouched}
+                                     isInvalid={addTaskForm.touched && addTaskForm.errors.title}
+                                     isValid={addTaskForm.touched && addTaskForm.values.title.length > 0 && !addTaskForm.errors.title}
                                      aria-describedby="Enter title task"
                                      value={addTaskForm.values.title}
                                      onChange={addTaskForm.handleChange}/>
+                        <FormControl.Feedback type="invalid">
+                            {addTaskForm.errors.title}
+                        </FormControl.Feedback>
                     </InputGroup>
                     <InputGroup>
                         <InputGroup.Prepend>
@@ -70,6 +88,7 @@ const TodoTasks = () => {
                                      type="textarea"
                                      name="description"
                                      as="textarea"
+                                     required
                                      aria-label="Enter description task"
                                      value={addTaskForm.values.description}
                                      onChange={addTaskForm.handleChange}/>
