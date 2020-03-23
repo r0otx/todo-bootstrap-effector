@@ -13,13 +13,13 @@ import TodoTasksMore from "./TodoTasksMore";
 import Modal from "react-bootstrap/Modal";
 import {$tasks} from "../../effector/model";
 import {useStore} from "effector-react";
-import {$input, delTask, onTextChanged, setTask} from "./model";
+import {delTask, setTask} from "./model";
 import {$selectedFolder} from "../TodoFolders/model";
+import {useFormik} from "formik";
 
 const TodoTasks = () => {
 
     const tasks = useStore($tasks);
-    const input = useStore($input);
     const selectedFolder = useStore($selectedFolder);
 
     const [active, setActive] = useState(false);
@@ -28,42 +28,62 @@ const TodoTasks = () => {
     const [showModal, setShowModal] = useState(false);
 
     const handleClose = () => setShowModal(false);
-    const handleSave = () => {
-        setTask({id: selectedFolder, title: input});
-        setShowModal(false);
-    };
+
     const handleShow = () => setShowModal(true);
+
+    const addTaskForm = useFormik({
+        initialValues: {
+            title: '',
+            description: '',
+        },
+        onSubmit: (values) => {
+            setTask({id: selectedFolder, title: values.title, description: values.description});
+        },
+    });
 
     return (
         <Col md={8} className="mb-2">
             <Modal show={showModal} onHide={handleClose}>
+                <form name="add task" onSubmit={addTaskForm.handleSubmit}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add task</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <InputGroup className="mb-3">
                         <InputGroup.Prepend>
-                            <InputGroup.Text id="basic-addon3">
+                            <InputGroup.Text>
                                 Task title
                             </InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl id="basic-url" aria-describedby="basic-addon3" value={input} onChange={onTextChanged}/>
+                        <FormControl id="title"
+                                     type="text"
+                                     name="title"
+                                     aria-describedby="Enter title task"
+                                     value={addTaskForm.values.title}
+                                     onChange={addTaskForm.handleChange}/>
                     </InputGroup>
                     <InputGroup>
                         <InputGroup.Prepend>
                             <InputGroup.Text>Description</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl as="textarea" aria-label="With textarea"/>
+                        <FormControl id="description"
+                                     type="textarea"
+                                     name="description"
+                                     as="textarea"
+                                     aria-label="Enter description task"
+                                     value={addTaskForm.values.description}
+                                     onChange={addTaskForm.handleChange}/>
                     </InputGroup>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleSave}>
+                    <Button variant="primary" type="submit">
                         Save Changes
                     </Button>
                 </Modal.Footer>
+                </form>
             </Modal>
             <Card>
                 <Card.Body>

@@ -27,7 +27,7 @@ export const todoAPI = {
         return httpClient.get(`todo-lists/${tasklistid}/tasks`);
     },
     postTask(params) {
-        return httpClient.post(`todo-lists/${params.id}/tasks`, {title: params.title});
+        return httpClient.post(`todo-lists/${params.id}/tasks`, {title: params.title, description: params.description});
     },
     delTask(params) {
         return httpClient.delete(`todo-lists/${params.listId}/tasks/${params.taskId}`)
