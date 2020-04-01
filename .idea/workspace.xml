@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11b75429-be6f-48b1-9385-e2e6943dbc32" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/TodoFolders/TodoFolderAdd.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TodoFolders/TodoFoldersList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TodoTasks/TodoTaskAdd.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TodoTasks/TodoTasksList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Preloader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoTasks/TodoTasks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoTasks/TodoTasks.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodoFolders/TodoFolders.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodoFolders/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoFolders/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodoTasks/TodoTasks.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodoTasks/TodoTasksMore.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoTasks/TodoTasksMore.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TodoTasks/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoTasks/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/effector/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/effector/model.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,28 +46,32 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../todolist" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="D:\Program Files\WebStorm 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Developers\react\todo-effector\src\effector" />
-    </key>
     <key name="OPEN_URL_DIALOG">
       <recent name="https://github.com/svettaEfimova/samuraiLesons.git" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Developers\react\todo-effector\src\components\TodoTasks" />
       <recent name="E:\Developers\react\todo-effector\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Developers\react\todo-effector\src\effector" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -83,7 +99,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584375998565</updated>
-      <workItem from="1584376000179" duration="120900000" />
+      <workItem from="1584376000179" duration="122362000" />
+      <workItem from="1585046392234" duration="6046000" />
+      <workItem from="1585081362812" duration="1222000" />
+      <workItem from="1585118893815" duration="1748000" />
+      <workItem from="1585228710806" duration="3080000" />
+      <workItem from="1585384911055" duration="55759000" />
     </task>
     <task id="LOCAL-00001" summary="Add api&#10;Separation app.jsx for a few components">
       <created>1584482018456</created>
@@ -113,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584990322670</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add formik input error control">
+      <created>1584999764991</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584999764991</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,49 +160,54 @@
     <MESSAGE value="Add effector model to TodoFolders&#10;Add modal window to Add Folder and Add Task" />
     <MESSAGE value="Add Effect to Add Task&#10;Fix action to click more information window&#10;Add del Folder" />
     <MESSAGE value="Add formik lib" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add formik lib" />
+    <MESSAGE value="Add formik input error control" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add formik input error control" />
   </component>
   <component name="WindowStateProjectService">
     <state x="533" y="202" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584693087702">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="533" y="202" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1584693087702" />
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1584990322158">
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1584999764485">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584990322158" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1584889321763">
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584999764485" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1585053219388">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584889321763" />
-    <state width="1515" height="190" key="GridCell.Tab.0.bottom" timestamp="1584889731619">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585053219388" />
+    <state width="1515" height="190" key="GridCell.Tab.0.bottom" timestamp="1585648297155">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584889731619" />
-    <state width="1515" height="190" key="GridCell.Tab.0.center" timestamp="1584889731619">
+    <state width="1515" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585648297155" />
+    <state width="1515" height="190" key="GridCell.Tab.0.center" timestamp="1585648297155">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584889731619" />
-    <state width="1515" height="190" key="GridCell.Tab.0.left" timestamp="1584889731619">
+    <state width="1515" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585648297155" />
+    <state width="1515" height="190" key="GridCell.Tab.0.left" timestamp="1585648297154">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584889731619" />
-    <state width="1515" height="190" key="GridCell.Tab.0.right" timestamp="1584889731619">
+    <state width="1515" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585648297154" />
+    <state width="1515" height="190" key="GridCell.Tab.0.right" timestamp="1585648297155">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584889731619" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1584990324833">
+    <state width="1515" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585648297155" />
+    <state x="125" y="110" key="SettingsEditor" timestamp="1585419644984">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1584990324833" />
+    <state x="125" y="110" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585419644984" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1584999767403">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1584999767403" />
     <state x="510" y="38" key="refactoring.ChangeSignatureDialog" timestamp="1584875756653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="510" y="38" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1584875756653" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1584985066354">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1585504658601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1584985066354" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1585504658601" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1584697525744">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -31,5 +31,10 @@ export const todoAPI = {
     },
     delTask(params) {
         return httpClient.delete(`todo-lists/${params.listId}/tasks/${params.taskId}`)
+    },
+    completedTask(params) {
+        return httpClient.put(`todo-lists/${params.todoListId}/tasks/${params.id}/`, {title: params.title,
+            description: params.description,
+            status: 1,})
     }
 };

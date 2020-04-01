@@ -10,3 +10,5 @@ const $store = combine({
 });
 
 export default $store;
+
+window.store = $store;

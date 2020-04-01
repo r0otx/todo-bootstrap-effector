@@ -1,14 +1,6 @@
 import {createEffect, createEvent, createStore} from "effector";
 import {todoAPI} from "../../api/api";
-import {$folders, $tasks} from "../../effector/model"
-
-//Input state
-const textChanged = createEvent("Input Text");
-export const somethingAdded = createEvent();
-export const onTextChanged = textChanged.prepend((event) => event.currentTarget.value);
-export const $input = createStore("")
-    .on(textChanged, (state, title) => title)
-    .reset(somethingAdded);
+import {$folders} from "../../effector/model"
 
 //Selected folder
 export const selectedFolder = createEvent("Folder ID");
@@ -33,17 +25,4 @@ export const delFolder = createEffect("Delete Folder").use( async (id) => {
     return await todoAPI.deleteTodoFolder(id);
 });
 
-export const folderDeleted = createEvent();
-
-delFolder.done.watch(({params}) => {
-    folderDeleted(params);
-});
-
-$folders.on(folderDeleted, (state, payload) => state.filter(folder => folder.id !== payload));
-
-//Get tasks
-export const getTasks = createEffect("Get tasks from folder").use(async (tasklistid) => {
-   return await todoAPI.getTasks(tasklistid);
-});
-
-$tasks.on(getTasks.done, (state, {result}) => result.data.items);
+$folders.on(delFolder.done, (state, payload) => state.filter(folder => folder.id !== payload.params));

@@ -3,8 +3,8 @@ import "./App.scss"
 import Container from "react-bootstrap/Container";
 import {Row} from "react-bootstrap";
 import Header from "./components/Header";
-import TodoFolders from "./components/TodoFolders/TodoFolders";
-import TodoTasks from "./components/TodoTasks/TodoTasks";
+import TodoFoldersList from "./components/TodoFolders/TodoFoldersList";
+import TodoTasksList from "./components/TodoTasks/TodoTasksList";
 
 
 const App = () => {
@@ -13,8 +13,8 @@ const App = () => {
             <Header/>
             <Container className="mt-3">
                 <Row>
-                    <TodoFolders/>
-                    <TodoTasks/>
+                    <TodoFoldersList/>
+                    <TodoTasksList/>
                 </Row>
             </Container>
         </div>
