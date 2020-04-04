@@ -36,5 +36,8 @@ export const todoAPI = {
         return httpClient.put(`todo-lists/${params.todoListId}/tasks/${params.id}/`, {title: params.title,
             description: params.description,
             status: 1,})
-    }
+    },
+    renameTodoTask(params) {
+        return httpClient.put(`todo-lists/${params.showTaskItem.listId}/tasks/${params.showTaskItem.taskId}/`, {title: params.values.title})
+    },
 };

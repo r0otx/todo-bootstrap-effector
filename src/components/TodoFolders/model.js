@@ -13,6 +13,13 @@ export const getFolders = createEffect("Get Folders").use(async () => {
 
 $folders.on(getFolders.done, (state, {result}) => result.data);
 
+//Rename folder
+export const renameFolder = createEffect("Rename Folder").use(async (params) => {
+    return await todoAPI.renameTodoFolder(params);
+});
+
+$folders.on(renameFolder.done, (state, {result}) => result.data);
+
 //Add new folder
 export const setFolder = createEffect("Add Folder").use( async (title) => {
     return await todoAPI.postTodoFolder(title);
